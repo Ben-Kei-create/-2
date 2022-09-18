@@ -36,9 +36,9 @@ class BooksController < ApplicationController
 
 def update
    book = Book.find(params[:id])
-   book_update(list_params)
+   book.update(book_params)
    redirect_to book_path(book.id)
-end 
+end
 
   private
   # ストロングパラメータ

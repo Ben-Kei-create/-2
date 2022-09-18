@@ -7,7 +7,10 @@
 <p><%= @book.body %></p>
 
 
-<a href="">Edit</a> | <a href="">Back</a>
+<%= link_to "Edit", edit_book_path(@book.id) %>
+<%= link_to "Back", edit_book_path(@book.id) %>
+
+<!--<a href="">Edit</a> | <a href="">Back</a>-->
 
 
 <p>Find me in app/views/books/show.html.erb</p>
