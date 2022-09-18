@@ -34,14 +34,16 @@ class BooksController < ApplicationController
   end
 
 
-
+def update
+   book = Book.find(params[:id])
+   book_update(list_params)
+   redirect_to book_path(book.id)
+end 
 
   private
   # ストロングパラメータ
   # 下は、book_paramsを定義している。また、これは最後に追加している。
-
   def book_params
     params.require(:book).permit(:title, :body)
   end
-
 end
