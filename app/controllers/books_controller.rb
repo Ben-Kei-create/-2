@@ -40,6 +40,18 @@ def update
    redirect_to book_path(book.id)
 end
 
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    flash[:success] = "タスクを削除しました。"
+    redirect_to books_url
+  end
+
+
+
+
+
   private
   # ストロングパラメータ
   # 下は、book_paramsを定義している。また、これは最後に追加している。

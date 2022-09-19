@@ -1,25 +1,27 @@
-<h1>Books#index</h1>
 
-<h1>Books</h1>
-
-<% @books.each do |book| %>
-
-  <p>Title</p>
-  <span>
-    <%= link_to book.title, book_path(book.id) %>
-  </span>
-
-  <p>body</p>
-  <span>
-    <%= link_to book.title, book_path(book.id) %>
-  </span>
-
-
+<% flash.each do |message_type, message| %>
+<%= message %>
 <% end %>
 
 
+<h2><strong>Books</strong></h2>
+<table>
+  <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    <!--５列のうち、後ろの３列を結合する⇨colspan=3である。-->
+  </tr>
+    <!--trは、row(１列を表す)-->
 
+  <tr>
+  <td><%= link_to book.title, book_path(book.id) %></td>
+  <td><%= link_to book.body, book_path(book.id) %></td>
+  <td><%= link_to "Show", "https://422f3abef127440ea144a5818debabb8.vfs.cloud9.ap-northeast-1.amazonaws.com/books/:id" %></td>
+  <td><%= link_to "Edit", "https://422f3abef127440ea144a5818debabb8.vfs.cloud9.ap-northeast-1.amazonaws.com/books/books/:id/edit" %></td>
+  <td><%= link_to "Destroy", "https://422f3abef127440ea144a5818debabb8.vfs.cloud9.ap-northeast-1.amazonaws.com/books" %></td>
+  </tr>
+</table>
 
-
-
-<p>Find me in app/views/books/index.html.erb</p>
+<% @books.each do |book| %>
+<% end
